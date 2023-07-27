@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Disease Prediction</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+		<link rel="icon" href="static\doctor1.png" title="doctor icons" type="image/png" >
+	</head>
+<body>
+    <div class="container">
+        <h2 class='container-heading'><span class="heading_font">Disease Predictor</span></h2>
+        <div class='description'>
+          <p>A Machine Learning Web Application that predicits different Diseases, Built with Flask.</p><br>
+          <ul>
+            <li>
+               <a href="{{ url_for('kidney') }}">Kidney</a>
+             </li>
+             <li>
+               <a href="{{ url_for('diabetes') }}">Diabetes</a>
+             </li>
+             <li>
+                <a href="{{ url_for('heart') }}">Heart</a>
+              </li>
+            <li>
+                <a href="{{ url_for('index') }}">Home</a>
+             </li>
+          </ul>
+        </div>
+      </div>
+	<br>
+<br>
+
+      <div class="card">
+        <div class="box">
+            <div class="imgBox">
+                <a href="{{ url_for('heart')}}"> <img src="static\heart_card.jpg" alt="Heart Disease"  >
+            </a>
+            </div>
+            <div class="content">
+                <a href="{{ url_for('heart')}}">
+                <h2>Heart Disease Prediction</br>
+                <span>Kartik</span></h2>
+                </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="imgBox">
+                <a href="{{ url_for('diabetes')}}"> <img src="static\diabetes_card.png" alt="Diabetes Disease Prediction" ></a>
+            </div>
+            <div class="content">
+                <a href="{{ url_for('diabetes')}}">
+                <h2>Diabetes Disease Prediction</br>
+                <span>Chandana</span></h2></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="imgBox">
+                <a href="{{ url_for('kidney')}}">
+                <img src="static\kidney_card.jpg" alt="Chronic Kidney Disease Prediction" ></a>
+            </div>
+            <div class="content">
+                <a href="{{ url_for('kidney')}}">
+                <h2>Chronic Kidney Disease Prediction</br>
+                <span>Bhogeswar</span></h2>
+            </a>
+            </div>
+        </div>
+        
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- Footer -->
+<div class='footer'>
+    
+    <p class='footer-description'>Disease Prediction Web Application &#169;</p>
+</div>
+</body>
+</html>

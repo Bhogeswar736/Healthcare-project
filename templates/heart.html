@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Disease Predictor</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="icon" href="static\heartlogo.png" type="image/png" >
+  
+</head>
+<body>
+
+  <!-- Website Title -->
+
+  <div class="container">
+    <h2 class='container-heading'><span class="heading_font">Heart Disease Predictor</span></h2>
+    <div class='description'>
+      <p>A Machine Learning Web Application that predicits chances of having heart Disease or not, Built with Flask.</p><br>
+        <p>(Note:This model-KNN model gives 92.592593% accurate)</p>
+        <ul>
+          <li>
+             <a href="{{ url_for('kidney') }}">Kidney</a>
+           </li>
+           <li>
+             <a href="{{ url_for('diabetes') }}">Diabetes</a>
+           </li>
+           <li>
+              <a href="{{ url_for('heart') }}">Heart</a>
+            </li>
+          <li>
+              <a href="{{ url_for('index') }}">Home</a>
+           </li>
+        </ul>
+    </div>
+  </div>
+
+  <!-- Text Area -->
+  <div class="ml-container">
+    <form action="{{ url_for('predict')}}" method="POST"> 
+
+      <fieldset>
+        <legend><b>Enter the Details</b></legend>
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" placeholder="Enter your age.."><br>
+
+        <label for="sex">Sex</label>
+          <label for="male"> <input type="radio" name="sex" id="male" value="1" >Male</label>
+          <label for="female"><input type="radio" name="sex" id="female" value="0">Female</label>
+          
+        <br><br>
+
+        <label for="cp">Chest Pain Type</label>
+        <select id="cp" name="cp">
+          <option selected>----select option----</option>
+          <option value="1">Typical Angina->[1]</option>
+          <option value="2">Atypical Angina->[2]</option>
+          <option value="3">Non-anginal Pain->[3]</option>
+          <option value="4">Asymtomatic->[4]/option>
+        </select><br>
+
+        <label for="bp">Resting Blood Pressure</label>
+        <input type="number" id="bp" name="bp" min="94" max="200" placeholder="A number in range [94-200] mmHg"><br>
+
+        <label for="chol">Serum Cholesterol</label>
+        <input type="number" id="chol" name="chol" min="126" max="564" placeholder="A number in range [126-564] mg/dl"><br>
+
+        <label for="fbs">Fasting Blood Sugar</label>
+        <select id="fbs" name="fbs">
+          <option selected>----select option----</option>
+          <option value="1">Greater than 120 mg/dl</option>
+          <option value="0">Less than 120 mg/dl</option>
+        </select><br>
+
+        <label for="ekg">Resting ECG Results</label>
+        <select id="ekg" name="ekg">
+          <option selected>----select option----</option>
+          <option value="0">Normal->{0}</option>
+          <option value="1">Having ST-T wave abnormality->{1}</option>
+          <option value="2">Probable or definite left ventricular
+            hypertrophy-{2}</option>
+        </select><br>
+
+        <label for="hr">Max Heart Rate </label>
+        <input type="text" id="hr" name="hr" placeholder="A number in range [71-202] bpm"><br>
+
+        <label for="exang">Exercise-induced Angina</label>
+        <select id="exang" name="exang">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="st">ST depression</label>
+        <input type="text" id="st" name="st" placeholder="ST depression, typically in [0-6.2]"><br>
+
+        <label for="slope">slope of the peak exercise ST segment</label>
+        <select id="slope" name="slope">
+          <option selected>----select option----</option>
+          <option value="1">Upsloping->{1}</option>
+          <option value="2">Flat->{2}</option>
+          <option value="3">Downsloping->{3}</option>
+        </select><br>
+        
+        <label for="count">Number of Major vessels</label>
+        <input type="text" id="count" name="count" placeholder="Typically in [0-3]"><br> 
+
+        <label for="thal">Thallium</label> 
+        <select id="thal" name="thal">
+          <option selected>----select option----</option>
+          <option value="3">Normal->[3]</option>
+          <option value="6">Fixed Defect->[6]</option> 
+          <option value="7">Reversible Defect->[7]</option>  
+        </select><br>
+        </fieldset>
+
+      <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+  </div>
+
+  
+  <!-- Footer -->
+  <div class='footer'>
+    <div class="contact">
+      <a target="_blank" href="https://instagram.com/_kartik__12?igshid=OTk0YzhjMDVlZA=="><i
+        class="fab fa-instagram fa-lg contact-icon"></i></a>
+      <a target="_blank" href="https://www.linkedin.com/in/kartik-gupta-1b85ab24a/"><i
+        class="fab fa-linkedin fa-lg contact-icon"></i></a>
+    </div>
+    <p class='footer-description'>Made by Kartik Gupta.</p>
+    </div>
+
+</body>
+
+</html>

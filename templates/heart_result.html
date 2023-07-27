@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Heart Disease Predictor</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+		<link rel="icon" href="static\heartlogo.png" type="image/png" >
+	</head>
+
+    <body>
+
+        <!-- Website Title -->
+		<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Heart Disease Predictor</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App, Built with Flask</p>
+				<ul>
+					<li>
+					   <a href="{{ url_for('kidney') }}">Kidney</a>
+					 </li>
+					 <li>
+					   <a href="{{ url_for('diabetes') }}">Diabetes</a>
+					 </li>
+					 <li>
+						<a href="{{ url_for('heart') }}">Heart</a>
+					  </li>
+					<li>
+						<a href="{{ url_for('index') }}">Home</a>
+					 </li>
+				  </ul>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<class="results">
+			{% if prediction==1 %}
+				<div><img src="https://media.tenor.com/images/941b7c7ddbe833e186af7704e26aa3df/tenor.gif" alt="suffering Image" height="300px" width="300px"></div>
+				<h1>Prediction: <span class='danger'>Unfortunetly, you have high risk of getting heart disease</span></h1>
+				
+			{% elif prediction==0 %}
+				<div ><img src="https://media.tenor.com/images/eb53c2a525f26f2504c7e7ba27c2470b/tenor.gif" alt="not suffering Image" height="300px" width="300px"></div> 
+				<h1>Prediction: <span class='safe'>Hurrah !!!! You have very less chances of getting heart disease.</span></h1>
+				
+			{% endif %}
+		</div>
+		<div class="col-md-4"><a href="http://127.0.0.1:5000/" class="btn btn-block btn-primary">Back to Home</a></div>
+		<div class="caution">
+			<marquee><p>Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.</p></marquee>
+		</div>
+		<!-- Footer -->
+		<div class='footer'>
+			<div class="contact">
+			  <a target="_blank" href="https://instagram.com/_kartik__12?igshid=OTk0YzhjMDVlZA=="><i
+				  class="fab fa-instagram fa-lg contact-icon"></i></a>
+			  <a target="_blank" href="https://www.linkedin.com/in/kartik-gupta-1b85ab24a/"><i
+				  class="fab fa-linkedin fa-lg contact-icon"></i></a>
+			</div>
+			<p class='footer-description'>Made by Kartik Gupta.</p>
+		  </div>
+
+	</body>
+</html>
